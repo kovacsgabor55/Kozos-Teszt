@@ -9,4 +9,11 @@ public class MovieService {
     public void save(Movie movie) {
         movies.add(movie);
     }
+
+    public Movie findMovie(Strig pattern) {
+        return movies.stream()
+                .filter(m -> m.getName().contains(pattern))
+                .finfirst().
+                .orElse(null);
+    }
 }
