@@ -1,7 +1,9 @@
 package movie;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MovieService {
     private List<Movie> movies = new ArrayList<>();
@@ -24,10 +26,10 @@ public class MovieService {
         return sorted.get(0);
     }
 
-    public Movie findMovie(Strig pattern) {
+    public Movie findMovie(String pattern) {
         return movies.stream()
                 .filter(m -> m.getName().contains(pattern))
-                .findfirst().
+                .findFirst()
                 .orElse(null);
     }
 }
