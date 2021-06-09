@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,5 +33,11 @@ class MovieServiceTest {
     void newestMovieTest() {
         Movie movie = service.newestMovie();
         assertEquals("Batman", movie.getName());
+    }
+
+    @Test
+    void findTest() {
+         List<Movie> movies = service.findMovie("at");
+        assertEquals(2, movies.size());
     }
 }

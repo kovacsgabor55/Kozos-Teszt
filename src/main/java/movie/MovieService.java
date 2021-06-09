@@ -26,10 +26,9 @@ public class MovieService {
         return sorted.get(0);
     }
 
-    public Movie findMovie(String pattern) {
+    public List<Movie> findMovie(String pattern) {
         return movies.stream()
                 .filter(m -> m.getName().contains(pattern))
-                .findFirst()
-                .orElse(null);
+                .collect(Collectors.toList());
     }
 }
